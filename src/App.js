@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import styles from './App.module.css';
+import ModalContainer from './components/UI/ModalContainer';
 
 function App() {
   const [switchBtn, setSwitch] = useState(false);
@@ -20,11 +21,13 @@ function App() {
       <Wrapper>
         <BrowserRouter>
           <Header onSwitch={switchHandler} switchBtn={switchBtn} />
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<SignUp />} />
-          </Routes>
+          <ModalContainer>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<SignUp />} />
+            </Routes>
+          </ModalContainer>
         </BrowserRouter>
       </Wrapper>
     </div>

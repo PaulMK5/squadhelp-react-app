@@ -1,4 +1,5 @@
 import styles from './Header.module.css';
+import Button from '../UI/Button';
 import { Link } from 'react-router-dom';
 
 const Header = ({ onSwitch, switchBtn }) => {
@@ -7,13 +8,13 @@ const Header = ({ onSwitch, switchBtn }) => {
       <a href="#" className={styles.logo}>
         squadhelp
       </a>
-      <button onClick={onSwitch} className={styles['header-button']}>
+      <Button onClick={onSwitch}>
         {switchBtn === false ? (
           <Link to="signup">Signup</Link>
         ) : (
           <Link to="login">Login</Link>
         )}
-      </button>
+      </Button>
     </div>
   );
 };

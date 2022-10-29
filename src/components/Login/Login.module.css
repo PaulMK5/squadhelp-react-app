@@ -11,3 +11,20 @@
   display: flex;
   flex-direction: column;
 }
+
+.login-form input {
+  margin-bottom: 2rem;
+}
+
+.login-form__additional_controls {
+  margin-top: -0.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.login-form__additional_controls input {
+  position: relative;
+  top: 1px;
+  margin-right: 5px;
+}

@@ -8,5 +8,6 @@ export const LOGIN_SCHEMA = yup.object({
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
       'Password does not meet minimal requirements'
     )
-    .required('Please enter password')
+    .required('Please enter password'),
+  remember: yup.boolean()
 });

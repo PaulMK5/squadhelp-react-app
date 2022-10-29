@@ -1,5 +1,4 @@
-// import { useState, useEffect } from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { LOGIN_SCHEMA } from '../../schemas';
 import MyField from '../MyField';
 import Button from '../UI/Button';
@@ -7,32 +6,13 @@ import styles from './Login.module.css';
 
 const initialState = {
   email: '',
-  pass: ''
+  pass: '',
+  remember: false
 };
 
 const Login = () => {
-  /*const [emailIsValid, setEmailValid] = useState(null);
-
-   useEffect(() => {
-    const timerId = setTimeout(() => {
-      console.log('useEffect check form validity');
-
-      setEmailValid();
-    }, 500);
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, [emailIsValid]);
-
-  const emailValidate = email => {
-    let error;
-    if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email)) {
-      error = 'Invalid email address';
-    }
-    return error;
-  }; */
-
   const onFormikSubmit = (values, actions) => {
+    console.log(values);
     alert(
       `Welcome back!\nEntered email: ${values.email}\nEntered password: ${values.pass}`
     );
@@ -54,6 +34,13 @@ const Login = () => {
             <Form className={styles['login-form']}>
               <MyField name="email" placeholder="user@mail.com" />
               <MyField name="pass" placeholder="password" />
+              <div className={styles['login-form__additional_controls']}>
+                <label>
+                  <Field type="checkbox" name="remember" />
+                  Remember Me
+                </label>
+                <a href="#">Forgot Password</a>
+              </div>
               <Button
                 type="submit"
                 isDisabled={!(dirty && isValid)}

@@ -1,3 +1,9 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .input {
   padding: 1rem;
   line-height: 1.2rem;
@@ -10,8 +16,10 @@
 }
 
 .error-msg {
+  position: absolute;
+  top: 3.7rem;
+  left: 0;
   color: #ff7d87;
-  margin-top: -1.8rem;
   margin-bottom: 0.8rem;
 }
 

@@ -16,10 +16,10 @@ const MyField = props => {
   );
 
   return (
-    <>
+    <div className={styles['input-wrapper']}>
       <input {...field} {...props} className={errorClass} />
       <ErrorMessage name={props.name} component={ErrorMsg} />
-    </>
+    </div>
   );
 };
 

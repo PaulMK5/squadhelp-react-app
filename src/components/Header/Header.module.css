@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+@media (max-width: 420px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
 .logo {
   font-size: 2rem;
   padding: 1rem;

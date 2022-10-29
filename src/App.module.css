@@ -4,6 +4,7 @@
 .app {
   background-color: rgb(170, 53, 170);
   position: fixed;
+  overflow-y: auto;
   top: 0;
   bottom: 0;
   left: 0;

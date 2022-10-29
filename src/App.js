@@ -13,7 +13,7 @@ function App() {
   const [switchBtn, setSwitch] = useState(false);
 
   const switchHandler = () => {
-    setSwitch(!switchBtn);
+    setSwitch(prevSwitch => !prevSwitch);
   };
 
   return (

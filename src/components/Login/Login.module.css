@@ -7,6 +7,12 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+  .login-modal h2 {
+    font-size: 1.5rem;
+  }
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -17,7 +23,7 @@
 }
 
 .login-form__additional_controls {
-  margin-top: -0.8rem;
+  margin-top: -0.6rem;
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;

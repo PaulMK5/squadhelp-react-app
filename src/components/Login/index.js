@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const Login = () => {
-  const onFormikSubmit = (values, actions) => {
+  const submitHandler = (values, actions) => {
     console.log(values);
     alert(
       `Welcome back!\nEntered email: ${values.email}\nEntered password: ${values.pass}`
@@ -26,7 +26,7 @@ const Login = () => {
       <h2>LOGIN TO YOUR ACCOUNT</h2>
       <Formik
         initialValues={initialState}
-        onSubmit={onFormikSubmit}
+        onSubmit={submitHandler}
         validationSchema={LOGIN_SCHEMA}
       >
         {({ isValid, dirty }) => {

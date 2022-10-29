@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { LOGIN_SCHEMA } from '../../schemas';
+import MyField from '../MyField';
 import Button from '../UI/Button';
 import styles from './Login.module.css';
 
@@ -38,12 +39,7 @@ const Login = () => {
     actions.resetForm();
   };
 
-  const ErrorMsg = ({ children }) => {
-    return <div className={styles['error-msg']}>{children}</div>;
-  };
-
   const loginModalClass = `${styles['login-modal']} animate__animated animate__backInDown`;
-  const errorClass = `${styles.error} animate__animated animate__shakeX`;
 
   return (
     <div className={loginModalClass}>
@@ -53,21 +49,11 @@ const Login = () => {
         onSubmit={onFormikSubmit}
         validationSchema={LOGIN_SCHEMA}
       >
-        {({ errors, touched, isValid, dirty }) => {
+        {({ isValid, dirty }) => {
           return (
             <Form className={styles['login-form']}>
-              <Field
-                name="email"
-                placeholder="user@mail.com"
-                className={touched.email && errors.email && errorClass}
-              />
-              <ErrorMessage name="email" component={ErrorMsg} />
-              <Field
-                name="pass"
-                placeholder="password"
-                className={touched.pass && errors.pass && errorClass}
-              />
-              <ErrorMessage name="pass" component={ErrorMsg} />
+              <MyField name="email" placeholder="user@mail.com" />
+              <MyField name="pass" placeholder="password" />
               <Button
                 type="submit"
                 isDisabled={!(dirty && isValid)}

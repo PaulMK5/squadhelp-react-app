@@ -11,6 +11,12 @@
   background: none;
 }
 
+.button a {
+  display: inline-block;
+  padding: 11px;
+  margin: -11px;
+}
+
 .button:hover {
   color: rgb(170, 53, 170);
 }
